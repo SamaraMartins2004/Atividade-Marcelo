@@ -1,0 +1,1 @@
+INSERT INTO `dados_form` (`id`, `nome`, `data_nasc`, `endereco`) VALUES (NULL, 'Ana', '23/10/1994', 'Avenida Olegário 144'), (NULL, 'Bruno', '05/06/2000', 'Rua dos otoni 555');
