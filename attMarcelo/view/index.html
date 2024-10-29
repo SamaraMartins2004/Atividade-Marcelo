@@ -1,21 +1,30 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Informações Usuários</title>
-</head>
-<body onload="carregarTabela()">
-    <h1>Informações Usuários</h1>
+  <head>
+    <script src="index.js"></script>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Informações Clientes</title>
+  </head>
+  <body onload="carregarTabela()">
+    <h1>Informações de Clientes</h1>
     <form action="/">
-        <label for="itemNome">Nome</label>
-        <input type="text" id="itemNome">
-
-        <label for="">Data de Nascimento</label>
-        <input type="text" id="itemDataNasc">
-
-        <label for="itemEndereco">Endereço</label>
-        <input type="text" id="itemEndereco">
-    </form>    
-</body>
+      <label for="itemNome">Nome</label>
+      <input type="text" id="itemNome" />
+      <br />
+      <label for="">Data de Nascimento</label>
+      <input type="text" id="itemDataNasc" />
+      <br />
+      <label for="itemEndereco">Endereço</label>
+      <input type="text" id="itemEndereco" />
+      <br />
+      <label for="confirmaLeitura"
+        >Confirmo estar ciente das informações necessárias</label
+      >
+      <input type="checkbox" id="confirmaLeitura" />
+      <input type="button" value="Inclui" onclick="incProduto()" />
+      <input type="button" value="Cancelar" onclick="escondeJanelaInclui()" />
+    </form>
+    <table id="tabProduto"></table>
+  </body>
 </html>
