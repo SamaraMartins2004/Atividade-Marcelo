@@ -1,5 +1,4 @@
-function carregarTabela() {
-  console.log("Carregando tabelas...");
+function carregaTabela() {
   const req = new XMLHttpRequest();
   req.open("GET", "http://localhost:8003/dados_clientes");
 
@@ -21,29 +20,36 @@ function carregarTabela() {
   req.send();
 }
 function incProduto() {
-  if (!document.getElementById("confirmaLeitura").checked) {
-    alert("Por favor, confirme estar ciente das informações necessárias.");
+  const nome = document.getElementById("itemNome").value;
+  const dataNascimento = document.getElementById("itemDataNasc").value;
+  const endereco = document.getElementById("itemEndereco").value;
+  const confirmaLeitura = document.getElementById("confirmaLeitura").checked;
+
+  if (!nome || !dataNascimento || !endereco || !confirmaLeitura) {
+    alert(
+      "Favor preencher todos os campos solicitado e confirmar estar ciente das informações!!"
+    );
     return;
   }
-
   const novoProduto = {
-    nome: document.getElementById("itemNome").value,
-    dataNascimento: document.getElementById("itemDataNasc").value,
-    endereco: document.getElementById("itemEndereco").value,
+    nome: nome,
+    dataNascimento: dataNascimento,
+    endereco: endereco,
   };
-
-  console.log("incluir registro : ");
-  console.log(novoProduto);
 
   const req = new XMLHttpRequest();
   req.open("POST", "http://localhost:8003/dados_clientes");
   req.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
   req.onload = () => {
-    alert("Registro incluido");
-    document.getElementById("itemNome").value = "";
-    document.getElementById("itemDataNasc").value = "";
-    document.getElementById("itemEndereco").value = "";
-    carregaTabela();
+    if (req.status == 200) {
+      alert("Registro incluído");
+      document.getElementById("itemNome").value = "";
+      document.getElementById("itemDataNasc").value = "";
+      document.getElementById("itemEndereco").value = "";
+      carregaTabela();
+    } else {
+      alert("Erro ao incluir registro" + req.responseText);
+    }
   };
   req.send(JSON.stringify(novoProduto));
 }

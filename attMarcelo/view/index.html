@@ -6,18 +6,27 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Informações Clientes</title>
   </head>
-  <body onload="carregarTabela()">
+  <body onload="carregaTabela()">
     <h1>Informações de Clientes</h1>
     <form action="/">
       <label for="itemNome">Nome</label>
       <input type="text" id="itemNome" />
       <br />
       <label for="">Data de Nascimento</label>
-      <input type="text" id="itemDataNasc" />
+      <input type="date" id="itemDataNasc" />
       <br />
       <label for="itemEndereco">Endereço</label>
       <input type="text" id="itemEndereco" />
       <br />
+      <label for="itemMaioridade">Tenho 18 anos ou mais</label>
+
+      <label for="opcao1">Sim</label>
+      <input type="radio" id="opcao1" value="opcao1" name="opcaoIdade" />
+
+      <label for="opcao2">Não</label>
+      <input type="radio" id="opcao2" value="opcao2" name="opcaoIdade" />
+      <br />
+
       <label for="confirmaLeitura"
         >Confirmo estar ciente das informações necessárias</label
       >
