@@ -1,0 +1,18 @@
+{
+  "name": "atividade-marcelo",
+  "version": "1.0.0",
+  "description": "PASSO A PASSO PARA INICIALIZAÇÃO, APÓS ABERTURA DO DIRETORIO DO GITHUB\r //ISSO DEPOIS DE APAGAR TODOS OS ARQUIVOS PACKAGE, PRECISEI INCLUIR TODAS AS EXTENSÕES COMO O EXPRESS, MYSQL2 E O CORS E A PASTA NODE MODULES:",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.21.1",
+    "mysql2": "^3.11.3"
+  }
+}

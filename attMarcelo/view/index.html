@@ -18,13 +18,14 @@
       <label for="itemEndereco">Endereço</label>
       <input type="text" id="itemEndereco" />
       <br />
-      <label for="itemMaioridade">Tenho 18 anos ou mais</label>
+      <label for="itemMaioridade">Meu genero é:</label>
 
-      <label for="opcao1">Sim</label>
-      <input type="radio" id="opcao1" value="opcao1" name="opcaoIdade" />
+      <input type="radio" id="genero" value="opcao1" name="opcaoGenero" />
+      <label for="opcao1">Masculino</label>
 
-      <label for="opcao2">Não</label>
-      <input type="radio" id="opcao2" value="opcao2" name="opcaoIdade" />
+      <input type="radio" id="genero" value="opcao2" name="opcaoGenero" />
+      <label for="opcao2">Feminino</label>
+      
       <br />
 
       <label for="confirmaLeitura"
@@ -32,7 +33,7 @@
       >
       <input type="checkbox" id="confirmaLeitura" />
       <input type="button" value="Inclui" onclick="incProduto()" />
-      <input type="button" value="Cancelar" onclick="escondeJanelaInclui()" />
+      <input type="button" value="Cancelar" />
     </form>
     <table id="tabProduto"></table>
   </body>

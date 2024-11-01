@@ -36,8 +36,8 @@ app.get("/dados_clientes", (req, res) => {
 //rota para inserir novos clientes
 app.post("/dados_clientes", (req, res) => {
   const sql =
-    "INSERT INTO dados_clientes (nome, dataNascimento, enderec) VALUES (?, ?, ?)";
-  const values = [req.body.nome, req.body.dataNascimento, req.body.endereco];
+    "INSERT INTO dados_clientes (nome, dataNascimento, enderec, genero) VALUES (?, ?, ?)";
+  const values = [req.body.nome, req.body.dataNascimento, req.body.endereco, req.body.genero];
 
   console.log("Tentando inserir no banco de dados:", values);
 
