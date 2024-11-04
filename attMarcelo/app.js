@@ -35,9 +35,13 @@ app.get("/dados_clientes", (req, res) => {
 
 //rota para inserir novos clientes
 app.post("/dados_clientes", (req, res) => {
-  const sql =
-    "INSERT INTO dados_clientes (nome, dataNascimento, enderec, genero) VALUES (?, ?, ?)";
-  const values = [req.body.nome, req.body.dataNascimento, req.body.endereco, req.body.genero];
+  console.log(req.body);
+  const sql = "INSERT INTO produto (nome, dataNascimento, enderec, genero) VALUES ('"+req.body.nome+"', "+req.body.dataNascimento+", "+req.body.enderec+" , "+req.body.genero+"); "
+  console.log(sql)
+  connection.execute(sql ,
+    (err, results, fields) => {
+        if(err) res.send('ERRO')
+        else res.send('ok')
 
   console.log("Tentando inserir no banco de dados:", values);
 
@@ -51,6 +55,33 @@ app.post("/dados_clientes", (req, res) => {
     }
   });
 });
+
+//rota para excluir registros
+app.delete("/dados_clientes/:id", (req, res) =>{
+  const id = req.params.id;
+console.log('Apagando o registro'+req.params.id)
+connection.execute(
+  'DELETE FROM dados_clientes WHERE id='+req.params.id,
+    (err, results, fields) => {
+        if(err) res.send('ERRO')
+        else res.send('ok')
+    }
+   );
+})
+app.put("/dados_clientes/:id", (req, res) => {
+  console.log("PUT adicionado na rota dados_clientes")
+  console.log(req.body)
+
+  const sql = "UPDATE dados_clientes SET nome = ?, dataNascimento = ?, enderec = ?, genero = ? WHERE id = ?";
+  const value = [req.body.nome, req.body.dataNascimento, req.body.endereco, req.body.genero, id];
+  console.log(sql)
+  connection.execute(sql ,value
+    (err, results, fields) => {
+        if(err) res.send('ERRO')
+        else res.send('ok')
+    }
+  );
+  })
 
 app.listen(8003, () => {
   console.log("Executando a porta 8003");
