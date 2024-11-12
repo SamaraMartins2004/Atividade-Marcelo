@@ -1,0 +1,13 @@
+#titulo{
+    display: flex;
+    align-items: center;
+}
+ td, th{
+    border: solid black 2px;
+    font-size: 18px;
+}
+#container-table{
+    border-collapse: collapse;
+    padding: 10px;
+    gap: 40%;
+}

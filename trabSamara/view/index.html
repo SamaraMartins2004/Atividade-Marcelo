@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <link rel="stylesheet" href="index.css">
+    <script src="index.js"></script>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title id="titulo">Informações Clientes</title>
+  </head>
+  <body onload="carregaTabela()">
+    <h1>Informações de Clientes</h1>
+    
+    <div id="container-form">
+    <form id="body" action="/">
+      <label for="itemNome">Nome</label>
+      <input type="text" id="itemNome" />
+      <br />
+      <label for="">Data de Nascimento</label>
+      <input type="date" id="itemDataNasc" />
+      <br />
+      <label for="itemEndereco">Endereço</label>
+      <input type="text" id="itemEndereco" />
+      <br />
+      <label for="itemMaioridade">Meu genero é:</label>
+
+      <input type="radio" id="masc" name="opcaoGenero" />
+      <label for="opcao1">Masculino</label>
+
+      <input type="radio" id="fem" name="opcaoGenero" />
+      <label for="opcao2">Feminino</label>
+      <br />
+
+      <label for="confirmaLeitura"
+        >Confirmo estar ciente das informações necessárias</label
+      >
+      <input type="checkbox" id="confirmaLeitura" />
+      <input type="button" value="Inclui" onclick="incCliente()" />
+      <input type="button" value="Cancelar" />
+    </form>
+  </div>
+
+    <table id="tabCliente"></table>
+  </body>
+</html>
